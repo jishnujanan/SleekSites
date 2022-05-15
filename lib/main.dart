@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home:  Login(),
+      home: login! ? Secret() : Login(),
     );
   }
 }

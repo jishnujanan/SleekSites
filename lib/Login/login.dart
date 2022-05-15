@@ -75,7 +75,7 @@ class _LoginState extends State<Login> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text('Email', style: styleformfield),
+                              Text('Email\n', style: styleformfield),
                               TextFormField(
                                 validator: (value) {
                                   if (value!.isEmpty)
@@ -92,7 +92,11 @@ class _LoginState extends State<Login> {
                                 decoration: const InputDecoration(
                                   filled: true,
                                   contentPadding:
-                                      EdgeInsets.symmetric(horizontal: 10.0),
+                                      EdgeInsets.symmetric(horizontal: 6,vertical: 6.0),
+                                  focusedErrorBorder:OutlineInputBorder(
+                                      borderSide: BorderSide.none),
+                                  errorBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(width: 1,color: Colors.red)),
                                   enabledBorder: OutlineInputBorder(
                                       borderSide: BorderSide.none),
                                   focusedBorder: OutlineInputBorder(
@@ -108,7 +112,7 @@ class _LoginState extends State<Login> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text('Password', style: styleformfield),
+                              Text('Password\n', style: styleformfield),
                               TextFormField(
                                 validator: (value) {
                                   if (value!.isEmpty)
@@ -124,8 +128,14 @@ class _LoginState extends State<Login> {
                                 obscureText: true,
                                 decoration: const InputDecoration(
                                   filled: true,
+
                                   contentPadding:
-                                      EdgeInsets.symmetric(horizontal: 10.0),
+                                      EdgeInsets.symmetric(horizontal: 6.0,vertical: 6),
+                                  enabled: true,
+                                  focusedErrorBorder:OutlineInputBorder(
+                                      borderSide: BorderSide.none),
+                                  errorBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(width: 1,color: Colors.red)),
                                   enabledBorder: OutlineInputBorder(
                                       borderSide: BorderSide.none),
                                   focusedBorder: OutlineInputBorder(
@@ -138,13 +148,14 @@ class _LoginState extends State<Login> {
                         Padding(
                           padding:const EdgeInsets.all(20),
                           child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Container(
-                                decoration: const BoxDecoration(
+                                width: MediaQuery.of(context).size.width,
+                                height: 48,
+                                decoration:BoxDecoration(
                                     borderRadius:
-                                        BorderRadius.all(Radius.circular(22))),
+                                        BorderRadius.circular(20.0)),
                                 child: MaterialButton(
                                   onPressed: () async {
                                     if(formkey.currentState!.validate())
