@@ -1,0 +1,17 @@
+The underlying algorithm used by face_recognition for face recognition is based on deep metric learning.
+
+Deep metric learning trains a neural network to learn an embedding space where similar faces are closer together and dissimilar faces are farther apart. The network is trained on a large dataset of face images to map faces into this embedding space. During face recognition, the algorithm computes the face embeddings for the input image and compares them with the known face embeddings to find the best match.
+
+The specific details of the deep metric learning algorithm used by face_recognition library may vary, but it is likely based on convolutional neural networks (CNNs) and uses loss functions such as triplet loss or contrastive loss to learn the embedding space.
+
+    Neural Networks: Deep metric learning algorithms typically employ deep neural networks, such as convolutional neural networks (CNNs), to learn powerful representations of face images. CNNs are well-suited for image-related tasks and can extract hierarchical features that capture different levels of abstraction.
+
+    Training with Triplet Loss: Triplet loss is a commonly used loss function in deep metric learning. During training, triplets of face images are formed, consisting of an anchor image (representing a specific person), a positive image (another image of the same person), and a negative image (an image of a different person). The network is trained to minimize the distance between the anchor and positive images while maximizing the distance between the anchor and negative images.
+
+    Embedding Space: The deep neural network is trained to map face images into a lower-dimensional embedding space. Each face image is transformed into a fixed-length feature vector (embedding) that represents the face's characteristics. The goal is to learn a representation where the Euclidean distance or cosine similarity between embeddings accurately reflects the similarity or dissimilarity between the corresponding faces.
+
+    Siamese Networks: Siamese networks are commonly used in deep metric learning. They consist of two or more identical subnetworks that share the same weights. Each subnetwork takes an input image and produces its corresponding embedding. The embeddings are then compared using distance metrics to determine their similarity.
+
+    Hard Negative Mining: In deep metric learning, hard negative mining is often employed to improve the discriminative power of the learned embeddings. During training, the network focuses on difficult negative examples that are closest to the anchor image, which helps improve the network's ability to distinguish between similar faces.
+
+    Transfer Learning and Pre-training: Due to the need for large-scale labeled face datasets, transfer learning is commonly used in deep metric learning. Pre-trained models on large datasets, such as ImageNet, are used as a starting point. The networks are then fine-tuned using face-specific datasets for face recognition tasks.
